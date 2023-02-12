@@ -3,12 +3,14 @@ import YouTellIdoContext from '../../YouTellIdoContext'
 import './index.css'
 
 const SolveCard = () => {
-  console.log('master route')
   const [getInp, setGetInp] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
   const onChangeInpElement = event => {
     setGetInp(event.target.value)
+    if (getInp.length > 1) {
+      setErrorMessage('')
+    }
   }
 
   const getAddition = (num1, num2) => num1 + num2
@@ -88,20 +90,31 @@ const SolveCard = () => {
         const getFormateValues = () => {
           const splitted = getInp.split('(')
           const id = new Date()
-          const num1 = getNumericValue(splitted[0].toLowerCase())
-          const num2 = getNumericValue(splitted[2].toLowerCase())
-          const result = getCaluculations(num1, splitted[1], num2)
-          const symbole = getCalucuationSymbol(splitted[1])
-          const showDets = {
-            id,
-            studentusername: currentUser.username,
-            firstNum: num1,
-            secondNum: num2,
-            oparation: symbole,
-            results: result,
+
+          if (
+            splitted[0] !== undefined &&
+            splitted[2] !== undefined &&
+            splitted[1] !== undefined
+          ) {
+            const num1 = getNumericValue(splitted[0].toLowerCase())
+            const num2 = getNumericValue(splitted[2].toLowerCase())
+            const result = getCaluculations(num1, splitted[1], num2)
+            const symbole = getCalucuationSymbol(splitted[1])
+            const showDets = {
+              id,
+              studentusername: currentUser.username,
+              firstNum: num1,
+              secondNum: num2,
+              oparation: symbole,
+              results: result,
+            }
+            if (symbole !== '' && num1 !== null && num2 !== null) {
+              setCalcHistoryFn(showDets)
+              setGetInp('')
+            }
+          } else {
+            setErrorMessage('Enter Valid Expression')
           }
-          setCalcHistoryFn(showDets)
-          setGetInp('')
         }
         return (
           <div className="solve-card-container">

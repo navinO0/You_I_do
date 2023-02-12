@@ -1,3 +1,4 @@
+import {Redirect} from 'react-router-dom'
 import {useState} from 'react'
 import './index.css'
 
@@ -56,6 +57,9 @@ const LoginRoute = props => {
           whoIsDt === 'MASTER'
             ? 'https://res.cloudinary.com/dzapdxkgc/image/upload/v1676122989/4630062_q8ukum.jpg'
             : 'https://res.cloudinary.com/dzapdxkgc/image/upload/v1676123347/depositphotos_308779296-stock-illustration-cute-kid-teen-boy-show_cvqwdf.jpg'
+        if (whoIsDt === '') {
+          return <Redirect to="/" />
+        }
         return (
           <div className="login-main-container">
             <div className="login-image-container">
