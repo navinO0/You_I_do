@@ -94,7 +94,8 @@ const SolveCard = () => {
           if (
             splitted[0] !== undefined &&
             splitted[2] !== undefined &&
-            splitted[1] !== undefined
+            splitted[1] !== undefined &&
+            splitted[3] !== undefined
           ) {
             const num1 = getNumericValue(splitted[0].toLowerCase())
             const num2 = getNumericValue(splitted[2].toLowerCase())
@@ -108,12 +109,17 @@ const SolveCard = () => {
               oparation: symbole,
               results: result,
             }
-            if (symbole !== '' && num1 !== null && num2 !== null) {
+            if (
+              symbole !== '' &&
+              num1 !== null &&
+              num2 !== null &&
+              splitted[3].length === 3
+            ) {
               setCalcHistoryFn(showDets)
               setGetInp('')
+            } else {
+              setErrorMessage('Enter Valid Expression')
             }
-          } else {
-            setErrorMessage('Enter Valid Expression')
           }
         }
         return (
