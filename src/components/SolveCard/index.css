@@ -1,0 +1,33 @@
+.solve-card-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.input-field {
+  border: solid 1px #e2e8f0;
+  border-radius: 7px;
+  padding: 10px;
+  color: #64748b;
+  outline: none;
+  margin-right: 15px;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+.inp-btn-container {
+  display: flex;
+  align-items: center;
+}
+.calculate-btn {
+  border: solid 1px #e2e8f0;
+  border-radius: 7px;
+  padding: 10px 25px 10px 25px;
+  color: #64748b;
+  outline: none;
+  background-color: transparent;
+  margin-right: 15px;
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-size: 20px;
+}

@@ -1,0 +1,29 @@
+.home-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.home-main-heading {
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+.buttons-container {
+  display: flex;
+}
+.home-master-student {
+  height: 300px;
+  width: 300px;
+}
+
+.home-btn {
+  padding: 7px;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  margin-right: 20px;
+}

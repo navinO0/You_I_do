@@ -1,0 +1,38 @@
+.greet-logout-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+}
+
+.student-route-main-container {
+  padding: 30px;
+}
+.greet-heading {
+  font-family: 'Roboto';
+  font-size: 28px;
+  color: #7e858e;
+}
+
+.user-name {
+  color: #616e7c;
+}
+.history-cards-container {
+}
+.history-ul-container {
+  list-style: none;
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.math-image {
+  height: 300px;
+}
+.heading-img-container {
+  display: flex;
+  justify-content: space-between;
+}
+.heading-inp-container {
+  display: flex;
+  flex-direction: column;
+}
