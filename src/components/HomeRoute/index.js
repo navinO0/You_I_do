@@ -15,7 +15,7 @@ const HomeRoute = props => (
         setWhoIsFn('STUDENT')
         history.push('/login')
       }
-      console.log(currentUser)
+
       if (currentUser.username !== undefined) {
         if (currentUser.whoIsDt === 'MASTER') {
           return <Redirect to="/master" />
